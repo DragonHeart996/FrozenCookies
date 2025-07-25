@@ -454,7 +454,7 @@ function autoRigidel() {
     let tryHarvest = false;
 
     // Only proceed if we have swaps available
-    if (T.swaps < 1 && orderLvl === 0) return;
+    if (T.swaps < 3 && orderLvl === 0) return;
 
     // Determine if Rigidel is in a slot and act accordingly
     if (orderLvl === 0) {
@@ -497,7 +497,7 @@ function autoRigidel() {
     }
 
     // Restore previous god if we swapped Rigidel in
-    if (prevGod !== -1) swapIn(prevGod, 0);
+    //if (prevGod !== -1) swapIn(prevGod, 0);
 }
 
 function autoDragonsCurve() {
