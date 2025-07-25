@@ -1064,13 +1064,8 @@ function baseCps() {
 
 function baseClickingCps(clickSpeed) {
     var clickFrenzyMod = clickBuffBonus();
-    var frenzyMod = Game.hasBuff("Frenzy") ? Game.buffs["Frenzy"].multCpS : 1;
+    var frenzyMod = cpsBonus(); //Game.hasBuff("Frenzy") ? Game.buffs["Frenzy"].multCpS : 1;
     var cpc = Game.mouseCps() / (clickFrenzyMod * frenzyMod);
-
-    //fix for EMHU/MHUR
-    if (Game.Has("Flora") && Game.BuildingsOwned % 10 == 0) {
-        cpc *= 0.5;
-    }
     
     return clickSpeed * cpc;
 }
