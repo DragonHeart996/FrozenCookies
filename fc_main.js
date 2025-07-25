@@ -1039,6 +1039,12 @@ function cpsBonus() {
         if (typeof Game.buffs[i].multCpS != "undefined")
             ret *= Game.buffs[i].multCpS;
     }
+
+    //fix for EMHU/MHUR
+    if (Game.Has("Flora") && Game.BuildingsOwned % 10 == 0) {
+        ret *= 2;
+    }
+    
     return ret;
 }
 
@@ -1047,13 +1053,11 @@ function hasClickBuff() {
 }
 
 function baseCps() {
-    var buffMod = 1;
-    for (var i in Game.buffs) {
-        if (typeof Game.buffs[i].multCpS != "undefined")
-            buffMod *= Game.buffs[i].multCpS;
-    }
+    var buffMod = cpsBonus();
+    
     if (buffMod === 0) return FrozenCookies.lastBaseCPS;
     var baseCPS = Game.cookiesPs / buffMod;
+    
     FrozenCookies.lastBaseCPS = baseCPS;
     return baseCPS;
 }
@@ -1062,6 +1066,12 @@ function baseClickingCps(clickSpeed) {
     var clickFrenzyMod = clickBuffBonus();
     var frenzyMod = Game.hasBuff("Frenzy") ? Game.buffs["Frenzy"].multCpS : 1;
     var cpc = Game.mouseCps() / (clickFrenzyMod * frenzyMod);
+
+    //fix for EMHU/MHUR
+    if (Game.Has("Flora") && Game.BuildingsOwned % 10 == 0) {
+        cpc *= 0.5;
+    }
+    
     return clickSpeed * cpc;
 }
 
@@ -1538,6 +1548,11 @@ function harvestBank() {
 
     if (!FrozenCookies.maxSpecials) FrozenCookies.maxSpecials = 1;
 
+    //fix for EMHU/MHUR
+    if (Game.Has("Flora")) {
+        FrozenCookies.harvestFrenzy *= 2;
+    }
+    
     return (
         (baseCps() *
             60 *
