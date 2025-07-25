@@ -32,7 +32,7 @@ function swapIn(godId, targetSlot) {
 function autoWorship0Action() {
     if (
         !T ||
-        T.swaps < 1 ||
+        T.swaps < 3 ||
         !FrozenCookies.autoWorshipToggle ||
         !FrozenCookies.autoWorship0 ||
         FrozenCookies.autoCyclius ||
@@ -47,7 +47,7 @@ function autoWorship0Action() {
 function autoWorship1Action() {
     if (
         !T ||
-        T.swaps < 1 ||
+        T.swaps < 3 ||
         !FrozenCookies.autoWorshipToggle ||
         !FrozenCookies.autoWorship1 ||
         FrozenCookies.autoCyclius ||
@@ -71,7 +71,7 @@ function autoWorship1Action() {
 function autoWorship2Action() {
     if (
         !T ||
-        T.swaps < 1 ||
+        T.swaps < 3 ||
         !FrozenCookies.autoWorshipToggle ||
         !FrozenCookies.autoWorship2 ||
         FrozenCookies.autoCyclius ||
