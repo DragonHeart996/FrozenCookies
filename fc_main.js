@@ -1054,7 +1054,7 @@ function hasClickBuff() {
 
 function baseCps() {
     var buffMod = cpsBonus();
-    
+
     if (buffMod === 0) return FrozenCookies.lastBaseCPS;
     var baseCPS = Game.cookiesPs / buffMod;
     
