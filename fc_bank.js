@@ -25,12 +25,12 @@ function autoBrokerAction() {
     if (!B) return; // Just leave if you don't have the stock market
 
     //Hire brokers
-    var delay = delayAmount(); //GC or harvest bank
+    //var delay = delayAmount(); //GC or harvest bank
     var recommendation = nextPurchase();
     if (
-        recommendation.type == "building" && // Don't hire when saving for upgrade
+        //recommendation.type == "building" && // Don't hire when saving for upgrade
         B.brokers < B.getMaxBrokers() &&
-        Game.cookies >= delay + B.getBrokerPrice()
+        Game.cookies >= B.getBrokerPrice()
     ) {
         l("bankBrokersBuy").click();
         logEvent(
