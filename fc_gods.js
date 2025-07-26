@@ -32,7 +32,7 @@ function swapIn(godId, targetSlot) {
 function autoWorship0Action() {
     if (
         !T ||
-        T.swaps < 1 ||
+        T.swaps < 3 ||
         !FrozenCookies.autoWorshipToggle ||
         !FrozenCookies.autoWorship0 ||
         FrozenCookies.autoCyclius ||
@@ -47,7 +47,7 @@ function autoWorship0Action() {
 function autoWorship1Action() {
     if (
         !T ||
-        T.swaps < 1 ||
+        T.swaps < 3 ||
         !FrozenCookies.autoWorshipToggle ||
         !FrozenCookies.autoWorship1 ||
         FrozenCookies.autoCyclius ||
@@ -71,7 +71,7 @@ function autoWorship1Action() {
 function autoWorship2Action() {
     if (
         !T ||
-        T.swaps < 1 ||
+        T.swaps < 3 ||
         !FrozenCookies.autoWorshipToggle ||
         !FrozenCookies.autoWorship2 ||
         FrozenCookies.autoCyclius ||
@@ -454,7 +454,7 @@ function autoRigidel() {
     let tryHarvest = false;
 
     // Only proceed if we have swaps available
-    if (T.swaps < 1 && orderLvl === 0) return;
+    if (T.swaps < 3 && orderLvl === 0) return;
 
     // Determine if Rigidel is in a slot and act accordingly
     if (orderLvl === 0) {
@@ -497,7 +497,7 @@ function autoRigidel() {
     }
 
     // Restore previous god if we swapped Rigidel in
-    if (prevGod !== -1) swapIn(prevGod, 0);
+    //if (prevGod !== -1) swapIn(prevGod, 0);
 }
 
 function autoDragonsCurve() {
